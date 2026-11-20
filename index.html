@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>주식회사 중산</title>
+<meta name="description" content="주식회사 중산의 공고를 게재하는 홈페이지입니다.">
+<style>
+/* 회사 공고 페이지: 첫 화면 맨 위가 공고(상법 시행령 6조③). 외부 글꼴·추적 코드 없음 */
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --fg: #1b1f27;
+  --muted: #5d6573;
+  --line: #d9dde4;
+  --accent: #23407a;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #11141a; --surface: #181c24; --fg: #e4e7ee; --muted: #9aa2b1; --line: #2a303b; --accent: #9db4ec;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 17px/1.75 "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+}
+.wrap { max-width: 46rem; margin: 0 auto; padding: 28px max(16px, env(safe-area-inset-right, 0px)) 56px max(16px, env(safe-area-inset-left, 0px)); }
+.brand { margin: 0 0 22px; font-size: 15px; font-weight: 700; letter-spacing: 0.04em; color: var(--muted); }
+h1 { margin: 0 0 6px; font-size: 30px; line-height: 1.3; }
+h2 { margin: 0 0 4px; font-size: 20px; line-height: 1.45; }
+.lead { margin: 0 0 18px; color: var(--muted); font-size: 15px; }
+section { margin-bottom: 28px; }
+.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.item { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+.item p { margin: 6px 0 0; }
+.date { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; margin: 0 0 4px !important; }
+.empty { background: var(--surface); border: 1px dashed var(--line); border-radius: 12px; padding: 16px 18px; margin: 0; color: var(--muted); }
+.list:has(li) + .empty { display: none; }
+a { color: var(--accent); }
+dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; margin: 0; }
+dt { color: var(--muted); }
+dd { margin: 0; }
+footer { border-top: 1px solid var(--line); padding-top: 14px; font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="brand">주식회사 중산</p>
+
+  <main>
+    <section id="notice" aria-labelledby="notice-title">
+      <h1 id="notice-title">공고</h1>
+      <p class="lead">주식회사 중산은 정관에 따라 회사의 공고를 이 홈페이지에 게재합니다. 전산 장애 등 부득이한 사유로 게재할 수 없는 때에는 정관에서 정한 일간신문에 게재합니다.</p>
+
+      <ol class="list" id="notice-list">
+        <!--
+          ▼ 새 공고는 이 주석 바로 아래에 붙여 넣는다(최신 공고가 맨 위).
+            아래 예시 블록을 통째로 복사해서 주석 밖에 붙이고 날짜·제목·본문만 바꾼다.
+
+        <li class="item">
+          <p class="date"><time datetime="2027-03-31">2027년 3월 31일 게재</time></p>
+          <h2>제1기 결산공고 (재무상태표)</h2>
+          <p>상법 제449조제3항에 따라 제1기(2026년 11월 ○일 ~ 2026년 12월 31일) 재무상태표를 공고합니다.</p>
+          <p><a href="notice-2027-03-31.pdf">재무상태표 원문(PDF)</a> · 게시 기간: 2027년 3월 31일부터 2년</p>
+        </li>
+        -->
+      </ol>
+      <p class="empty" id="notice-empty">현재 게시 중인 공고가 없습니다.</p>
+    </section>
+
+    <section id="company" aria-labelledby="company-title">
+      <h2 id="company-title">회사 정보</h2>
+      <dl>
+        <dt>상호</dt><dd>주식회사 중산</dd>
+        <!-- 필요하면 설립 등기 뒤에 채운다
+        <dt>본점</dt><dd>○○</dd>
+        <dt>법인등록번호</dt><dd>○○○○○○-○○○○○○○</dd>
+        -->
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 주식회사 중산</p>
+  </footer>
+</div>
+</body>
+</html>
